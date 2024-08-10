@@ -1,0 +1,66 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Calculator</h1>
+      
+      <section id ="container">
+        <div id="display">
+          
+        </div>
+        <div id="keyboard">
+        <div>1</div>
+        <div>2</div>
+          <div>3</div>
+            <div class="black">-</div>
+              <div>4</div>
+                <div>5</div>
+                  <div>6</div>
+                    <div class="black">+</div>
+                      <div>7</div>  
+                        <div>8</div>
+                          <div>9</div>
+                          <div class="black">*</div>
+                          <div class="ac">AC</div>
+                          <div>0</div>
+                          <div class="black">=</div>
+                          <div class="black">/</div>
+                          </div>
+                          
+                  
+      <section>
+  </body>
+</html>
+
+<script>
+let keyboard= document.querySelectorAll("#keyboard >div");
+let bag="";
+for(let i=0; i<keyboard.length; i++){
+  keyboard[i].addEventListener("click", calculator);
+}
+function calculator(){
+let targetNumber= event.target.innerText;
+if(targetNumber=="AC"){
+  bag="";
+  document.querySelector("#display").innerText=bag;
+}
+else if(targetNumber=="="){
+
+  document.querySelector("#display").innerText=eval(bag);
+}
+  
+else{
+  bag = bag +targetNumber;
+  document.querySelector("#display").innerText=bag;
+}
+}
+
+
+
+</script>
+
